@@ -112,8 +112,16 @@ public class BasicController {
     public String block(Model model) {
         addUsers(model);
         return "basic/block";
-
     }
+
+    @GetMapping("/javascript")
+    public String javascript(Model model){
+        model.addAttribute("user", new User("\"Son*\"",35));
+        addUsers(model);
+
+        return "basic/javascript";
+    }
+
 
     private void addUsers(Model model){
         List<User> list = new ArrayList<>();
